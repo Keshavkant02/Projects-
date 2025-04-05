@@ -64,14 +64,14 @@ The prototype model was trained for **5** epochs as an initial test of the pipel
 *   **Learning Curves:**
     *(Insert screenshot of your Loss + Dice Coefficient plots from Cell 11 for the 5-epoch run here. Upload the image to your GitHub repo first.)*
     ```
-    ![Learning Curves - 5 Epochs](path/to/your/learning_curves_5epochs.png)
+    ![Learning Curves - 5 Epochs](images/learningcurve.png)
     ```
     *(Comment briefly: "The plots show the initial training phase over 5 epochs. While loss decreased slightly, the Dice score remained near zero, indicating insufficient training time for the model to learn meaningful segmentation patterns. The high binary accuracy is misleading due to the significant class imbalance (most pixels are background).")*
 *   **Sample Predictions:** Visualizations from the validation set after 5 epochs confirm the low Dice score, with the model primarily predicting blank masks.
     *(Insert one or two example screenshots from Cell 12 showing Image | True Mask | Predicted Mask for the 5-epoch run. Upload images first.)*
     ```
-    ![Sample Prediction 1 - 5 Epochs](path/to/your/prediction_example_1_5epochs.png)
-    ![Sample Prediction 2 - 5 Epochs](path/to/your/prediction_example_2_5epochs.png)
+    ![Sample Prediction 1 - 5 Epochs](images/maskimage.png) 
+   
     ```
 
 **Conclusion from this run:** This initial 5-epoch run confirms the data pipeline is working, but demonstrates that significantly more training time (more epochs) is required for the model to learn effective hemorrhage segmentation. The results highlight the importance of using appropriate metrics like Dice score over simple accuracy for imbalanced datasets. See the "Future Work" section for planned improvements, including longer training.

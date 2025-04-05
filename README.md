@@ -49,23 +49,32 @@ The project follows these key steps, implemented in the accompanying Colab noteb
 *   Kaggle API
 *   Google Colab (for environment and GPU access)
 
-## Results (Example - Replace with your actual findings!)
+## Results (Initial 5-Epoch Prototype Run)
 
-The prototype model was trained for **[Number]** epochs (e.g., 10 epochs).
+The prototype model was trained for **5** epochs as an initial test of the pipeline.
 
-*   **Training Performance:** Achieved a final training Dice Coefficient of **[Value]** and validation Dice Coefficient of **[Value]**. *(Obtain these values from the final epoch output of Cell 10 or the plots in Cell 11)*.
+*   **Training Performance (Epoch 5):**
+    *   Training Dice Coefficient: ~1.8e-4 (0.00018)
+    *   Training Binary Accuracy: ~99.81%
+    *   Training Loss (Dice Loss): ~0.9998
+*   **Validation Performance (Epoch 5):**
+    *   Validation Dice Coefficient: ~6.2e-9 (Essentially 0.0)
+    *   Validation Binary Accuracy: ~99.90%
+    *   Validation Loss (Dice Loss): ~1.0000
 *   **Learning Curves:**
-    *(Insert screenshot of your Loss + Dice Coefficient plots from Cell 11 here. Upload the image to your GitHub repo first.)*
+    *(Insert screenshot of your Loss + Dice Coefficient plots from Cell 11 for the 5-epoch run here. Upload the image to your GitHub repo first.)*
     ```
-    ![Learning Curves](path/to/your/learning_curves.png)
+    ![Learning Curves - 5 Epochs](path/to/your/learning_curves_5epochs.png)
     ```
-    *(Comment briefly, e.g., "The plots show the loss generally decreasing and the Dice score increasing for both training and validation sets over the [Number] epochs. There is potential for further improvement with longer training, and the gap between training and validation suggests minimal overfitting at this stage.")*
-*   **Sample Predictions:** Visual comparison demonstrates the model's capability to identify potential hemorrhage regions, although precision may vary.
-    *(Insert one or two example screenshots from Cell 12 showing Image | True Mask | Predicted Mask. Upload images first.)*
+    *(Comment briefly: "The plots show the initial training phase over 5 epochs. While loss decreased slightly, the Dice score remained near zero, indicating insufficient training time for the model to learn meaningful segmentation patterns. The high binary accuracy is misleading due to the significant class imbalance (most pixels are background).")*
+*   **Sample Predictions:** Visualizations from the validation set after 5 epochs confirm the low Dice score, with the model primarily predicting blank masks.
+    *(Insert one or two example screenshots from Cell 12 showing Image | True Mask | Predicted Mask for the 5-epoch run. Upload images first.)*
     ```
-    ![Sample Prediction 1](path/to/your/prediction_example_1.png)
-    ![Sample Prediction 2](path/to/your/prediction_example_2.png)
+    ![Sample Prediction 1 - 5 Epochs](path/to/your/prediction_example_1_5epochs.png)
+    ![Sample Prediction 2 - 5 Epochs](path/to/your/prediction_example_2_5epochs.png)
     ```
+
+**Conclusion from this run:** This initial 5-epoch run confirms the data pipeline is working, but demonstrates that significantly more training time (more epochs) is required for the model to learn effective hemorrhage segmentation. The results highlight the importance of using appropriate metrics like Dice score over simple accuracy for imbalanced datasets. See the "Future Work" section for planned improvements, including longer training.
 
 ## Challenges & Learnings
 
